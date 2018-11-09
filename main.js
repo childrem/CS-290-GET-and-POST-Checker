@@ -15,6 +15,7 @@ app.get('/',function(req,res){
   // array now has all name value pairs from the query string in objects
   var context = {};
   context.queryList = listToSend;
+  context.type = "GET";
   res.render('result', context)
 });
 
