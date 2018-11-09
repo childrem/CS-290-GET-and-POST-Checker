@@ -1,5 +1,6 @@
 <h1>{{type}} Request Received</h1>
 
+{{#if queryList}}
 
 <h3>The following values were received in the URL query string</h3>
 <table style="border: 1px solid black">
@@ -17,6 +18,11 @@
       </tr>
     {{/each}}
   </tbody>
+{{/if}}
+
+{{#unless queryList}}
+<h3>Nothing was received in the URL query string</h3>
+{{/unless}}
 
 {{#if bodyList}}
 
@@ -37,3 +43,7 @@
     {{/each}}
   </tbody>
 {{/if}}
+
+{{#unless queryList}}
+<h3>Nothing was received in the request body</h3>
+{{/unless}}
