@@ -1,49 +1,61 @@
 <h1>{{type}} Request Received</h1>
 
-{{#if queryList}}
+<div>
 
-<h3>The following values were received in the URL query string</h3>
-<table style="border: 1px solid black">
-  <thead>
-    <tr>
-      <th style="border: 1px solid black">Parameter Name</th>
-      <th style="border: 1px solid black">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each queryList}}
+  {{#if queryList}}
+
+  <h3>The following values were received in the URL query string</h3>
+  <table style="border: 1px solid black">
+    <thead>
       <tr>
-        <td style="border: 1px solid black">{{this.name}}</td>
-        <td style="border: 1px solid black">{{this.value}}</td>
+        <th style="border: 1px solid black">Parameter Name</th>
+        <th style="border: 1px solid black">Value</th>
       </tr>
-    {{/each}}
-  </tbody>
-{{/if}}
+    </thead>
+    <tbody>
+      {{#each queryList}}
+        <tr>
+          <td style="border: 1px solid black">{{this.name}}</td>
+          <td style="border: 1px solid black">{{this.value}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  {{/if}}
+
+</div>
+
+<div>
 
 {{#unless queryList}}
 <h3>Nothing was received in the URL query string</h3>
 {{/unless}}
 
-{{#if bodyList}}
+</div>
 
-<h3>The following values were received in the request body</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Parameter Name</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each bodyList}}
+<div>
+  {{#if bodyList}}
+
+  <h3>The following values were received in the request body</h3>
+  <table>
+    <thead>
       <tr>
-        <td>{{this.name}}</td>
-        <td>{{this.value}}</td>
+        <th>Parameter Name</th>
+        <th>Value</th>
       </tr>
-    {{/each}}
-  </tbody>
-{{/if}}
+    </thead>
+    <tbody>
+      {{#each bodyList}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.value}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  {{/if}}
+</div>
 
-{{#unless bodyList}}
-<h3>Nothing was received in the request body</h3>
-{{/unless}}
+<div>
+  {{#unless bodyList}}
+  <h3>Nothing was received in the request body</h3>
+  {{/unless}}
+</div>
