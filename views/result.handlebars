@@ -1,0 +1,35 @@
+<h1>{{type}} Request Received</h1>
+
+<h3>The following values were received in the URL query string</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each queryList}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.value}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+
+<h3>The following values were received in the request body</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each bodyList}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.value}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
