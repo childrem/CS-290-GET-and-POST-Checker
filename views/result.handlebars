@@ -29,18 +29,18 @@
   {{#if bodyList}}
 
   <h3>The following values were received in the request body</h3>
-  <table>
+  <table style="border: 1px solid black">
     <thead>
       <tr>
-        <th>Parameter Name</th>
-        <th>Value</th>
+        <th style="border: 1px solid black">Parameter Name</th>
+        <th style="border: 1px solid black">Value</th>
       </tr>
     </thead>
     <tbody>
       {{#each bodyList}}
         <tr>
-          <td>{{this.name}}</td>
-          <td>{{this.value}}</td>
+          <td style="border: 1px solid black">{{this.name}}</td>
+          <td style="border: 1px solid black">{{this.value}}</td>
         </tr>
       {{/each}}
     </tbody>
